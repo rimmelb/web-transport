@@ -210,7 +210,7 @@ impl SendStream {
         self.inner.set_priority(order).ok();
     }
 
-    pub fn set_deadline(&mut self, deadline: u64) {
+    pub fn set_deadline(&mut self, deadline: std::time::Instant) {
         self.inner.set_deadline(deadline).ok();
     }
 
