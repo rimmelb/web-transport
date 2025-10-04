@@ -8,3 +8,10 @@ members = [
     "web-transport-ws",
 ]
 resolver = "2"
+
+[patch.crates-io]
+quinn       = { git = "https://github.com/rimmelb/quinn.git", branch = "unified-0.11.9-qp-0.11.13", package = "quinn" }
+quinn-proto = { git = "https://github.com/rimmelb/quinn.git", branch = "unified-0.11.9-qp-0.11.13", package = "quinn-proto" }
+
+[patch."https://github.com/quinn-rs/quinn"]
+quinn-proto = { git = "https://github.com/rimmelb/quinn.git", branch = "unified-0.11.9-qp-0.11.13", package = "quinn-proto" }

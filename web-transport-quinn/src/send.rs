@@ -79,6 +79,10 @@ impl SendStream {
         self.stream.set_priority(order).map_err(Into::into)
     }
 
+    pub fn set_deadline(&self, deadline: u64) -> Result<(), ClosedStream> {
+        self.stream.set_deadline(deadline).map_err(Into::into);
+    }
+
     pub fn priority(&self) -> Result<i32, ClosedStream> {
         self.stream.priority().map_err(Into::into)
     }

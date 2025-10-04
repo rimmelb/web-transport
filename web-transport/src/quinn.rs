@@ -210,6 +210,10 @@ impl SendStream {
         self.inner.set_priority(order).ok();
     }
 
+    pub fn set_deadline(&mut self, deadline: u64) {
+        self.inner.set_deadline(deadline).ok();
+    }
+
     /// Send an immediate reset code, closing the stream.
     pub fn reset(&mut self, code: u32) {
         self.inner.reset(code).ok();
