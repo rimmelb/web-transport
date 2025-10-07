@@ -87,6 +87,18 @@ impl SendStream {
         self.stream.priority().map_err(Into::into)
     }
 
+    pub fn append_subgroup_header_size(&self, size: u64) -> Result<(), ClosedStream> {
+        self.stream.append_subgroup_header_size(size).map_err(Into::into)
+    }
+
+    pub fn append_object_header_size(&self, size: u64) -> Result<(), ClosedStream> {
+        self.stream.append_object_header_size(size).map_err(Into::into)
+    }
+
+    pub fn append_object_size(&self, size: u64, deadline: Option<u64>) -> Result<(), ClosedStream> {
+        self.stream.append_object_size(size, deadline).map_err(Into::into)
+    }
+
     /// Return the underlying QUIC stream ID.
     ///
     /// > **Warning**

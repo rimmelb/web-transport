@@ -209,9 +209,24 @@ impl SendStream {
     pub fn set_priority(&mut self, order: i32) {
         self.inner.set_priority(order).ok();
     }
-
+    /// Set a deadline for a stream
     pub fn set_deadline(&mut self, deadline: Option<u64>) {
         self.inner.set_deadline(deadline).ok();
+    }
+
+    ///Set the subgroup header size
+    pub fn append_subgroup_header_size(&mut self, size: u64) {
+        self.inner.append_subgroup_header_size(size).ok();
+    }
+
+    ///Set the object header size
+    pub fn append_object_header_size(&mut self, size: u64) {
+        self.inner.append_object_header_size(size).ok();
+    }
+
+    ///Set the object size
+    pub fn append_object_size(&mut self, size: u64, deadline: Option<u64>) {
+        self.inner.append_object_size(size, deadline).ok();
     }
 
     /// Send an immediate reset code, closing the stream.
