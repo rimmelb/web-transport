@@ -79,9 +79,6 @@ pub enum WriteError {
 
     #[error("stream closed")]
     ClosedStream,
-
-     #[error("dropped")]
-     Dropped
 }
 
 impl From<quinn::WriteError> for WriteError {
@@ -95,8 +92,7 @@ impl From<quinn::WriteError> for WriteError {
             }
             quinn::WriteError::ClosedStream => WriteError::ClosedStream,
             quinn::WriteError::ConnectionLost(e) => WriteError::SessionError(e.into()),
-            quinn::WriteError::ZeroRttRejected => unreachable!("0-RTT not supported"),
-            quinn::WriteError::Dropped => WriteError::Dropped
+            quinn::WriteError::ZeroRttRejected => unreachable!("0-RTT not supported")
         }
     }
 }
