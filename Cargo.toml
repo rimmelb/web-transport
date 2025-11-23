@@ -10,8 +10,8 @@ members = [
 resolver = "2"
 
 [patch.crates-io]
-quinn       = { git = "https://github.com/rimmelb/quinn.git", branch = "offset_watcher_drop", package = "quinn" }
-quinn-proto = { git = "https://github.com/rimmelb/quinn.git", branch = "offset_watcher_drop", package = "quinn-proto" }
+quinn       = { git = "https://github.com/rimmelb/quinn.git", branch = "relay-side-drop-implementation", package = "quinn" }
+quinn-proto = { git = "https://github.com/rimmelb/quinn.git", branch = "relay-side-drop-implementation", package = "quinn-proto" }
 
 [patch."https://github.com/quinn-rs/quinn"]
-quinn-proto = { git = "https://github.com/rimmelb/quinn.git", branch = "offset_watcher_drop", package = "quinn-proto" }
+quinn-proto = { git = "https://github.com/rimmelb/quinn.git", branch = "relay-side-drop-implementation", package = "quinn-proto" }
