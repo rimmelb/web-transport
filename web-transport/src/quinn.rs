@@ -215,7 +215,7 @@ impl SendStream {
     }
 
     ///Set the object size
-    pub fn űappend_object_size(&mut self, size: u64, deadline: Option<u64>, time: Option<u64>) {
+    pub fn append_object_size(&mut self, size: u64, deadline: Option<u64>, time: Option<u64>) {
         self.inner.append_object_size(size, deadline, time).ok();
     }
 
